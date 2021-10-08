@@ -1,0 +1,616 @@
+body{
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  background: url('../images/fon.png') 0 0 repeat;
+  box-sizing: border-box;
+}
+ul,li{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+.conteiner{
+  display: grid;
+  grid-template-columns: 1fr minmax(800px,1200px) 1fr;
+  grid-template-rows: auto auto auto 250px 50px;
+}
+
+/*header*/
+
+header{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+header .header_burger_logo{
+  display: none;
+}
+
+/*nav menu*/
+
+header a{
+  padding: 5px 0;
+}
+header > ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0;
+}
+header ul li{
+  position: relative;
+}
+header li img{
+  width:100px;
+  height: 100px;
+}
+header .menu > li:nth-child(2){
+  margin-left: 24px;
+  margin-right: 24px;
+}
+header .logo{
+  margin-right: 11.5px;
+  margin-left: 11.5px;
+}
+header .menu > li:nth-child(4){
+  margin-left: 40px;
+  margin-right: 40px;
+}
+header .menu > li:nth-child(5){
+  margin-left: 28px;
+  margin-right: 28px;
+}
+header li .fotos,header li .faq{
+  display: none;
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+}
+header .fotos a, header .faq a{
+  display: block;
+  padding: 10px 40px 10px 10px;
+  white-space: nowrap;
+}
+  /*hover-effects*/
+header a:hover{
+  color:yellowgreen;
+}
+header .logo:nth-child(3):hover{
+  transform: scale(1.12);
+}
+header .fotos a:hover,header .faq a:hover{
+  color:dimgrey;
+}
+header li:first-child:hover .fotos, header li:nth-child(4):hover .faq{
+  display: block;
+  top:20px;
+  left:-10px;
+  text-transform: none;
+}
+/*класс для фиксирования шапки*/
+header .menu-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  padding: 0;
+  box-shadow: 0 5px 5px grey;
+  z-index: 100;
+}
+/*уменьшаем логотип для шапки фиксированной*/
+header .menu-fixed img{
+  width: 50px;
+  height: 50px;
+}
+
+/*content*/
+
+.info{
+  grid-column: 1/4;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr repeat(3,25%) 1fr;
+  grid-template-rows: repeat(8,auto);
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+}
+.info_about{
+  grid-column: 2/5;
+  grid-row: 1/2;
+}
+hr{
+  border: none; /* Убираем границу для браузера Firefox */
+  color: lightgrey; /* Цвет линии для остальных браузеров */
+  background-color: lightgrey; /* Цвет линии для браузера Firefox и Opera */
+  height: 1px; /* Толщина линии */
+}
+.info p{
+  margin-left:30px;
+  margin-right: 30px;
+}
+.title{
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+.info_faq{
+  grid-column: 3/7;
+  grid-row: 2/3;
+}
+.info_faq1{
+  grid-column: 1/4;
+  grid-row: 3/4;
+}
+.info_image{
+  grid-column: 1/3;
+  grid-row: 2/3;
+  align-self: center;
+}
+.info_image img{
+  display: block;
+  width: 360px;
+  height: 360px;
+  margin:0 auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.info_image1{
+  grid-column: 4/6;
+  grid-row: 3/4;
+}
+/*image*/
+.info_image1 img{
+  display: block;
+  width: 330px;
+  height: 280px;
+  margin:0 auto;
+  max-width: 100%;
+  object-fit: contain;
+
+}
+.info_cake{
+  grid-column: 2/5;
+  grid-row: 4/5;
+}
+.info_pay{
+  grid-column: 2/5;
+  grid-row: 5/6;
+}
+.info_delivery{
+  grid-column: 2/5;
+  grid-row: 6/7;
+}
+.info_contacts{
+  grid-column: 2/5;
+  grid-row: 7/8;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 50px;
+}
+.text_underline{
+  text-decoration: underline;
+}
+/*Form*/
+.info_form{
+  grid-column: 2/5;
+  grid-row: 8/9;
+  font-family: 'Montserrat', sans-serif;
+}
+.form{
+  display: grid;
+  grid-template-columns: repeat(6,calc(100%/6));
+  grid-template-rows: repeat(4,auto);
+}
+.form_first{
+  grid-column: 2/4;
+  grid-row: 1/2;
+  margin-right: 20px;
+}
+.form_second{
+  grid-column: 4/6;
+  grid-row: 1/2;
+  margin-left: 20px;
+}
+.form_third{
+  grid-column: 3/5;
+  grid-row: 2/3;
+  margin-top: 30px;
+}
+.form_forth{
+  grid-column: 1/7;
+  grid-row: 3/4;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.form button{
+  grid-column: 1/7;
+  grid-row: 4/5;
+  display: block;
+  width: 130px;
+  height: 35px;
+  background-color: dimgrey;
+  color:white;
+  margin:0 auto;
+  border-radius:5px;
+}
+.form label{
+  display: block;
+  margin-bottom: 10px;
+}
+.form input{
+  width: 100%;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  color: dimgrey;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+.form textarea{
+  resize: none;
+  width: 100%;
+  height: 150px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*hover-effects form*/
+input:focus,textarea:focus{
+  outline:none;
+  border:1px solid dimgrey;
+}
+.form button:hover{
+  background: rgb(169,95,229);
+  background: radial-gradient(circle, rgba(169,95,229,1) 0%, rgba(172,172,172,1) 100%);
+  border:none;
+  transform: scale(1.1);
+}
+.form button:active{
+  transform: scale(1);
+}
+
+/*small image*/
+
+.small_image{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.small_image img{
+  width: 59px;
+  height: 81px;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+}
+/*button_up*/
+a.up{
+  display: block;
+  position: fixed;
+  right:5%;
+  bottom:55px;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #595a5c;
+  color:lightgrey;
+  font-size: 24px;
+  border:2px solid lightgrey;
+  border-radius:50px;
+  text-align: center;
+  line-height:50px;
+}
+/*button-up-hover-effects*/
+a.up:hover{
+  border-color:white;
+  color:white;
+  box-shadow: 2px 0px 5px ,0px 2px 5px,-2px -2px 5px ;
+}
+a.up:active{
+  transform: scale(0.9);
+}
+
+/*footer*/
+
+.footer_info_bg{
+  grid-column: 1/4;
+  grid-row: 4/5;
+  background-color: #595a5c;
+}
+.footer_info{
+  grid-column: 2/3;
+  grid-row: 4/5;
+  color: lightgrey;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 14px;
+  font-weight: 500;
+}
+.footer_contacts,.footer_info p,.footer_menu,.footer_links{
+  width: calc(100%/4);
+}
+.footer_contacts{
+  position: relative;
+}
+.footer_contacts::before{
+  content: "";
+  display: block;
+  width: 178px;
+  height: 32px;
+  background: url('../images/logo_grey.png') 0 0 no-repeat;
+  position: absolute;
+  top:-40px;
+  left: 0;
+}
+.footer_contacts li{
+  padding: 10px 10px;
+}
+.footer_contacts a {
+  color:lightgrey;
+}
+.footer_info p{
+  margin: 0;
+  padding: 10px 10px;
+}
+.footer_menu{
+  text-align: center;
+}
+.footer_menu a{
+  display: block;
+  padding: 10px 10px;
+  color:lightgrey;
+}
+/*social networks*/
+.footer_links{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.footer_links a{
+  display: block;
+  width:50px;
+  height:50px;
+  border:2px solid lightgrey;
+  border-radius:50px;
+  box-sizing: border-box;
+  background-color: #595a5c;
+  color:lightgrey;
+  text-align:center;
+  font-size:24px;
+  padding-top:11px;
+  position: relative;
+}
+.footer_links a.icon-viber::after{
+  content: "Viber";
+  display: block;
+  font-size: 16px;
+  position: absolute;
+  top:50px;
+  left:5px;
+}
+.footer_links a.icon-instagram::after{
+  content: "Instagram";
+  display: block;
+  font-size: 16px;
+  position: absolute;
+  top:50px;
+  left:-10px;
+}
+.footer_links a.icon-whatsapp::after{
+  content: "Whatsapp";
+  display: block;
+  font-size: 16px;
+  position: absolute;
+  top:50px;
+  left:-5px;
+}
+
+/*social networks-hover-effects*/
+.footer_links a:hover{
+  color:white;
+  border-color:white;
+}
+/*footer-_menu-hover-effects*/
+.footer_menu a:hover,.footer_contacts a:hover{
+  color:white;
+}
+.footer_cp_bg{
+  grid-column: 1/4;
+  grid-row: 5/6;
+  background-color: #252525;
+}
+.footer_cp{
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+.footer_cp > p{
+  font-size: 12px;
+  color: grey;
+  padding: 10px 10px;
+}
+/*adaptive up to 820px*/
+@media (max-width:820px) {
+  .conteiner{
+    display: grid;
+    grid-template-columns: 1fr minmax(320px,820px) 1fr;
+    grid-template-rows: auto auto auto 300px 50px;
+    min-width: 320px;
+  }
+/*меню бургер*/
+  header .header_burger_conteiner{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    padding-top: 5px;
+    box-sizing: border-box;
+  }
+  header .header_burger{
+    height: 100%;
+    margin-right:20px;
+  }
+  header .header_burger span{
+    display: block;
+    width: 60px;
+    height: 100%;
+    background: url("../images/button_burger-grey.png") 0 -6px no-repeat;
+  }
+  header .header_burger_logo{
+    display: block;
+    width: 50px;
+    height: 100%;
+    margin-left:20px;
+  }
+  header .header_burger_logo img{
+    display: block;
+    width: 50px;
+    height: 50px;
+  }
+/*прячем menu*/
+  header .menu{
+    position: absolute;
+    top:-270px;;
+    background-color: rgb(143,183,162);
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s ease 0s;
+  }
+  header .menu li{
+    padding: 15px 0;
+    }
+  header .menu .logo{
+    display: none;
+  }
+  header li:first-child:hover .fotos, header li:nth-child(4):hover .faq{
+    display: none;
+  }
+  header a:hover{
+    color:white;
+  }
+  header .header_burger_logo img:hover{
+    transform: scale(1.2);
+  }
+  /*появляется фиксированный меню-бургер*/
+  header .burger_menu-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 5px 5px grey;
+    z-index: 100;
+    padding-top:5px;
+  }
+/*при добалении menu active появляется*/
+  header .menu.active{
+    position: fixed;
+    top:60px;
+    left: 0;
+    z-index: 100;
+    height: 100%;
+    padding-top: 20px;
+  }
+  header .menu.active::after{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 150px;
+    background: url('../images/bluberries.png') 0 0 no-repeat;
+    position: absolute;
+    top: 235px;
+    left: calc(50% - 100px);
+  }
+  header .header_burger.active span{
+    background: url("../images/button_close-grey.png") 0 0 no-repeat;
+  }
+/*основной контент*/
+  main{
+    margin-top:20px;
+  }
+  .cakes, .cupcakes {
+    font-size: 15px;
+  }
+
+/*подвал*/
+  .footer_info{
+    flex-direction:column;
+    justify-content: flex-start;
+  }
+  .footer_info p{
+    display: none;
+  }
+  .footer_links{
+    width: 100%;
+  }
+  .footer_contacts{
+    width: 150px;
+    margin: 0 auto 15px;
+    text-align: center;
+  }
+  .footer_contacts::before{
+    left:-15px;
+  }
+  .footer_menu{
+    display: none;
+  }
+  .footer_cp > p{
+    text-align: center;
+    font-size: 10px;
+  }
+  .info_contacts, .info_form{
+    font-size: 16px;
+  }
+  .form input, .form label{
+    font-size: 11px;
+  }
+  .info_image img{
+    display: none;
+  }
+  .info_faq {
+    grid-column: 1/7;
+  }
+}
+
+@media (max-width:550px) {
+  .info_image1 img{
+    display: none;
+  }
+  .info_faq1,.info_pay,.info_delivery,.info_contacts,.info_about,.info_cake {
+    grid-column: 1/7;
+  }
+  .small_image img {
+    width: 30px;
+    height: 40px;
+  }
+  a.up {
+    bottom: 5%;
+    width: 30px;
+    height: 30px;
+    font-size: 19px;
+    line-height: 30px;
+  }
+}
